@@ -5,5 +5,8 @@ package v1.IHM;
  */
 public interface Ihm {
 
-    float getPosition();
+    void updateTempo(float tempo);
+    void updateStarted(boolean started);
+    void updateTime(int time);
 }
+

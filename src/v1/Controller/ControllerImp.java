@@ -8,8 +8,23 @@ public class ControllerImp implements Controller {
     private Engine engine;
     private Ihm ihm;
 
+    public ControllerImp(Engine engine, Ihm ihm){
+        this.engine = engine;
+        this.ihm = ihm;
+    }
+
     @Override
     public void updateTempo() {
-        engine.setTempo(ihm.getPosition());
+        ihm.updateTempo(engine.getTempo());
+    }
+
+    @Override
+    public void updateStarted() {
+        ihm.updateStarted(engine.isStarted());
+    }
+
+    @Override
+    public void updateTime(){
+        ihm.updateTime(engine.getTime());
     }
 }

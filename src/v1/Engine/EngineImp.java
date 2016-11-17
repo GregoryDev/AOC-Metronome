@@ -12,9 +12,13 @@ public class EngineImp implements Engine{
     private HashMap<TypeEvent, Command> commands = new HashMap<>();
 
     private float tempo;
+    private int time;
+    private boolean started;
 
-    public void EngineImp(float tempo){
-        this.tempo = tempo;
+    public EngineImp(){
+        tempo = 0;
+        started = false;
+        time = 0;
     }
 
     @Override
@@ -27,4 +31,45 @@ public class EngineImp implements Engine{
         tempo = t;
         commands.get(TypeEvent.UPDATE_TEMPO).execute();
     }
+
+    @Override
+    public void start() {
+        started = true;
+        commands.get(TypeEvent.UPDATE_STARTED).execute();
+    }
+
+    @Override
+    public void stop() {
+        started = false;
+        commands.get(TypeEvent.UPDATE_STARTED).execute();
+    }
+
+    @Override
+    public void IncTime() {
+        time++;
+        commands.get(TypeEvent.UPDATE_TIME).execute();
+    }
+
+    @Override
+    public void DecTime() {
+        time--;
+        commands.get(TypeEvent.UPDATE_TIME).execute();
+    }
+
+    @Override
+    public float getTempo() {
+        return tempo;
+    }
+
+    @Override
+    public boolean isStarted() {
+        return started;
+    }
+
+    @Override
+    public int getTime(){
+        return time;
+    }
+
+
 }

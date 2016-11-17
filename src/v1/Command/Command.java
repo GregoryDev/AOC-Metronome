@@ -7,6 +7,6 @@ import v1.Controller.Controller;
  */
 public interface Command {
 
-    void setController(Controller c);
+    void setController(Controller controller);
     void execute();
 }

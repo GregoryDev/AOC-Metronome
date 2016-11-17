@@ -3,9 +3,9 @@ package v1.Command;
 import v1.Controller.Controller;
 
 /**
- * Created by greg on 07/11/16.
+ * Created by greg on 17/11/16.
  */
-public class UpdateTempo implements Command {
+public class UpdateTime implements Command {
 
     private Controller controller;
 
@@ -16,6 +16,6 @@ public class UpdateTempo implements Command {
 
     @Override
     public void execute() {
-        controller.updateTempo();
+        controller.updateTime();
     }
 }

@@ -6,4 +6,6 @@ package v1.Controller;
 public interface Controller {
 
     void updateTempo();
+    void updateStarted();
+    void updateTime();
 }
