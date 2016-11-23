@@ -5,12 +5,6 @@ import v1.Command.Command;
 /**
  * Created by greg on 16/11/16.
  */
-public class Stop implements Component {
+public class Stop extends Component {
 
-    private Command c;
-
-    @Override
-    public void setCommand(Command c) {
-        this.c = c;
-    }
 }

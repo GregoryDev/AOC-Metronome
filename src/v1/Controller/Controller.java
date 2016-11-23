@@ -8,4 +8,6 @@ public interface Controller {
     void updateTempo();
     void updateStarted();
     void updateTime();
+
+    void setTempo();
 }

@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.112-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="v1.Controller.ControllerImp">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.112-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="v1.IHM.IhmImp">
    <columnConstraints>
       <ColumnConstraints />
       <ColumnConstraints />
@@ -30,7 +30,7 @@
       <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="Dec" GridPane.columnIndex="3" GridPane.rowIndex="4" />
       <CheckBox mnemonicParsing="false" text="Led 1" GridPane.columnIndex="4" />
       <CheckBox mnemonicParsing="false" text="Led 2" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-      <Slider />
+      <Slider fx:id="cursor"/>
       <TextField GridPane.columnIndex="2" />
    </children>
 </GridPane>
