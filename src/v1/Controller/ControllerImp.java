@@ -19,7 +19,9 @@ public class ControllerImp implements Controller {
     }
 
     @Override
-    public void updateTempo() { ihm.updateTempo(engine.getTempo()); }
+    public void updateTempo() {
+        ihm.updateTempo(engine.getTempo());
+    }
 
     @Override
     public void updateStarted() {

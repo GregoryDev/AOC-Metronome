@@ -24,10 +24,10 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="Start" GridPane.rowIndex="4" />
-      <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="Stop" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-      <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="Inc" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-      <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="Dec" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+      <Button fx:id="start" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="Start" GridPane.rowIndex="4" />
+      <Button fx:id="stop" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="Stop" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <Button fx:id="inc" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="Inc" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+      <Button fx:id="dec" mnemonicParsing="false" prefHeight="75.0" prefWidth="75.0" text="Dec" GridPane.columnIndex="3" GridPane.rowIndex="4" />
       <CheckBox mnemonicParsing="false" text="Led 1" GridPane.columnIndex="4" />
       <CheckBox mnemonicParsing="false" text="Led 2" GridPane.columnIndex="4" GridPane.rowIndex="2" />
       <Slider fx:id="cursor"/>

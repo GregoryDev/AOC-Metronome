@@ -12,4 +12,8 @@ abstract class Component {
         public void setCommand(Command c) {
             this.c = c;
         }
+
+        public void execute() {
+            c.execute();
+        }
 }
