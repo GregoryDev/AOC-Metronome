@@ -4,9 +4,6 @@ import v1.Command.Command;
 
 import java.util.HashMap;
 
-/**
- * Created by greg on 07/11/16.
- */
 public class EngineImp implements Engine{
 
     private HashMap<TypeEvent, Command> commands = new HashMap<>();
@@ -28,8 +25,10 @@ public class EngineImp implements Engine{
 
     @Override
     public void setTempo(float t) {
-        tempo = t;
-        commands.get(TypeEvent.UPDATE_TEMPO).execute();
+        if (isStarted()) {
+            tempo = t;
+            commands.get(TypeEvent.UPDATE_TEMPO).execute();
+        }
     }
 
     @Override
@@ -45,15 +44,19 @@ public class EngineImp implements Engine{
     }
 
     @Override
-    public void IncTime() {
-        time++;
-        commands.get(TypeEvent.UPDATE_TIME).execute();
+    public void incTime() {
+        if(isStarted()) {
+            time++;
+            commands.get(TypeEvent.UPDATE_TIME).execute();
+        }
     }
 
     @Override
-    public void DecTime() {
-        time--;
-        commands.get(TypeEvent.UPDATE_TIME).execute();
+    public void decTime() {
+        if(isStarted()) {
+            time--;
+            commands.get(TypeEvent.UPDATE_TIME).execute();
+        }
     }
 
     @Override

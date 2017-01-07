@@ -1,9 +1,26 @@
 package v1.IHM;
 
+import v1.Command.Command;
 
-/**
- * Created by greg on 16/11/16.
- */
-public class Start extends Component {
+public class Start implements Component {
+
+    private static Start instance = new Start();
+    private Command c;
+
+    private Start(){}
+
+    public static Start getInstance() {
+        return instance;
+    }
+
+    @Override
+    public void setCommand(Command c) {
+        this.c = c;
+    }
+
+    @Override
+    public void execute() {
+        c.execute();
+    }
 
 }

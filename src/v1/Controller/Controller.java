@@ -1,8 +1,5 @@
 package v1.Controller;
 
-/**
- * Created by greg on 07/11/16.
- */
 public interface Controller {
 
     void updateTempo();
@@ -10,4 +7,8 @@ public interface Controller {
     void updateTime();
 
     void setTempo();
+    void start();
+    void stop();
+    void incTime();
+    void decTime();
 }

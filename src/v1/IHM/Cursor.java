@@ -1,9 +1,26 @@
 package v1.IHM;
 
+import v1.Command.Command;
 
-/**
- * Created by greg on 16/11/16.
- */
-public class Cursor extends Component {
+public class Cursor implements Component {
+
+    private static Cursor instance = new Cursor();
+    private Command c;
+
+    private Cursor(){}
+
+    public static Cursor getInstance() {
+        return instance;
+    }
+
+    @Override
+    public void setCommand(Command c) {
+        this.c = c;
+    }
+
+    @Override
+    public void execute() {
+        c.execute();
+    }
 
 }

@@ -1,13 +1,18 @@
 package v1.IHM;
 
-/**
- * Created by greg on 16/11/16.
- */
+import v1.Command.Command;
+
 public interface Ihm {
 
-    void updateTempo(float tempo);
+    void updateTempo(double tempo);
     void updateStarted(boolean started);
     void updateTime(int time);
-    float getCursorPosition();
+    double getCursorPosition();
+
+    void setStartCommand(Command start);
+    void setStopCommand(Command stop);
+    void setIncCommand(Command inc);
+    void setDecCommand(Command dec);
+    void setCursorCommand(Command updateCursor);
 }
 

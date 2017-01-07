@@ -2,11 +2,13 @@ package v1.Command;
 
 import v1.Controller.Controller;
 
-/**
- * Created by greg on 07/11/16.
- */
-public interface Command {
+public abstract class Command {
 
-    void setController(Controller controller);
-    void execute();
+    protected Controller controller;
+
+    public void setController(Controller controller) {
+        this.controller = controller;
+    }
+
+    public abstract void execute();
 }

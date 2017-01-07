@@ -1,17 +1,18 @@
 package v1.IHM;
 
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
+import v1.Command.Command;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-/**
- * Created by greg on 23/11/16.
- */
 public class IhmImp implements Ihm, Initializable {
 
     private Cursor cursorCom;
@@ -35,50 +36,102 @@ public class IhmImp implements Ihm, Initializable {
     @FXML
     private Button stop;
 
+    @FXML
+    private Text tempo;
+
+    @FXML
+    private Text mesure;
+
     public IhmImp(){
-        cursorCom = new Cursor();
-        decCom = new Dec();
-        incCom = new Inc();
-        startCom = new Start();
-        stopCom = new Stop();
+        cursorCom = Cursor.getInstance();
+        decCom = Dec.getInstance();
+        incCom = Inc.getInstance();
+        startCom = Start.getInstance();
+        stopCom = Stop.getInstance();
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        cursor.valueProperty().addListener((observable, oldValue, newValue) -> {
-            cursorCom.execute();
-        });
-        dec.setOnAction((event) -> {
-            decCom.execute();
-        });
-        inc.setOnAction((event) -> {
-            incCom.execute();
-        });
-        start.setOnAction((event) -> {
-            startCom.execute();
-        });
-        stop.setOnAction((event) -> {
-            stopCom.execute();
-        });
+    public void setStartCommand(Command start){
+        startCom.setCommand(start);
     }
 
     @Override
-    public float getCursorPosition(){
-        return (float) cursor.getValue();
+    public void setStopCommand(Command stop) {
+        stopCom.setCommand(stop);
     }
 
     @Override
-    public void updateTempo(float tempo) {
+    public void setIncCommand(Command inc) {
+        incCom.setCommand(inc);
+    }
+
+    @Override
+    public void setDecCommand(Command dec) {
+        decCom.setCommand(dec);
+    }
+
+    @Override
+    public void setCursorCommand(Command updateCursor) {
+        cursorCom.setCommand(updateCursor);
+    }
+
+    @FXML
+    protected void start(ActionEvent event) {
+        startCom.execute();
+    }
+
+    @FXML
+    protected void stop(ActionEvent event) {
+        stopCom.execute();
+    }
+
+    @FXML
+    protected void inc(ActionEvent event) {
+        incCom.execute();
+    }
+
+    @FXML
+    protected void dec(ActionEvent event) {
+        decCom.execute();
+    }
+
+    @FXML
+    protected void cursor(MouseEvent event) {
+        cursorCom.execute();
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        disabled(true);
+    }
+
+    @Override
+    public double getCursorPosition() {
+        System.out.print("getCursor");
+        return cursor.getValue();
+    }
+
+    @Override
+    public void updateTempo(double tempo) {
+        this.tempo.setText("Tempo : " + tempo);
         cursor.setValue(tempo);
     }
 
     @Override
     public void updateStarted(boolean started) {
-
+        disabled(!started);
     }
 
     @Override
     public void updateTime(int time) {
+        mesure.setText("Mesures : " + time);
+    }
 
+    private void disabled(boolean on){
+        start.setDisable(!on);
+        stop.setDisable(on);
+        inc.setDisable(on);
+        dec.setDisable(on);
+        cursor.setDisable(on);
     }
 }
