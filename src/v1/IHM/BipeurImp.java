@@ -13,7 +13,7 @@ public class BipeurImp implements Bipeur{
     final private AudioClip soundMesure = new AudioClip(mesure.toString());
 
     @Override
-    public void playTempo() {System.out.println(this);
+    public void playTempo() {
         soundTempo.play();
     }
 

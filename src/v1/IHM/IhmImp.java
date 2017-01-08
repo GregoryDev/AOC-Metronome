@@ -85,13 +85,12 @@ public class IhmImp implements Ihm, Initializable {
 
     @Override
     public double getCursorPosition() {
-        System.out.print("getCursor");
         return cursor.getValue();
     }
 
     @Override
     public void updateTempo(double tempo) {
-        this.tempo.setText("Tempo : " + tempo);
+        this.tempo.setText("Tempo : " + (int)tempo);
         cursor.setValue(tempo);
     }
 
@@ -122,8 +121,5 @@ public class IhmImp implements Ihm, Initializable {
     private void disabled(boolean on){
         start.setDisable(!on);
         stop.setDisable(on);
-        inc.setDisable(on);
-        dec.setDisable(on);
-        cursor.setDisable(on);
     }
 }

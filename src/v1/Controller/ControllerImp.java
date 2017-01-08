@@ -26,6 +26,10 @@ public class ControllerImp implements Controller {
         this.engine.setCommand(EngineEvent.UPDATE_TIME, initializeCommand(new UpdateTime()));
         this.engine.setCommand(EngineEvent.TEMPO, initializeCommand(new Tempo()));
         this.engine.setCommand(EngineEvent.MESURE, initializeCommand(new Mesure()));
+
+        updateStarted();
+        updateTempo();
+        updateTime();
     }
 
     private Command initializeCommand(Command c) {
