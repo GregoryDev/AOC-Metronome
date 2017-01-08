@@ -30,7 +30,7 @@ public class HorlogeImp extends Thread implements Horloge {
     public void run() {
         while (started) {
             try {
-                sleep((long)((double)engine.getTempo()/(double)60 * (double)1000));
+                sleep((long)((double)60 / (double)engine.getTempo() * (double)1000));
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
