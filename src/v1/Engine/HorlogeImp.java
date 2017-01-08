@@ -16,7 +16,7 @@ public class HorlogeImp extends Thread implements Horloge {
 
     public void startHorloge() {
         started = true;
-        run();
+        start();
     }
 
     public void stopHorloge() {
@@ -30,7 +30,7 @@ public class HorlogeImp extends Thread implements Horloge {
     public void run() {
         while (started) {
             try {
-                sleep((Long.getLong(Double.toString(engine.getTempo()/60*1000))));
+                sleep(1000/*(Long.getLong(Double.toString(engine.getTempo()/60*1000)))*/);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
