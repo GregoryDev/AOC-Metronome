@@ -1,16 +1,14 @@
 package v1;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import v1.Controller.Controller;
 import v1.Controller.ControllerImp;
-import v1.Engine.Engine;
 import v1.Engine.EngineImp;
-import v1.IHM.Ihm;
-import v1.IHM.IhmImp;
 
 public class Main extends Application {
 
@@ -24,6 +22,11 @@ public class Main extends Application {
         primaryStage.show();
 
         init(fxml);
+
+        primaryStage.setOnCloseRequest(e -> {
+            Platform.exit();
+            System.exit(0);
+        });
     }
 
     public void init(FXMLLoader fxml) {
