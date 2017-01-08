@@ -1,6 +1,6 @@
-package v1.Engine;
+package shared.Engine;
 
-import v1.Command.Command;
+import shared.Command.Command;
 
 import java.util.HashMap;
 

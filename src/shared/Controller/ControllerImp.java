@@ -1,10 +1,11 @@
-package v1.Controller;
+package shared.Controller;
 
+import shared.Command.*;
 import v1.Command.*;
-import v1.Engine.Engine;
-import v1.Engine.EngineEvent;
-import v1.IHM.Ihm;
-import v1.IHM.IhmEvent;
+import shared.Engine.Engine;
+import shared.Engine.EngineEvent;
+import shared.IHM.Ihm;
+import shared.IHM.IhmEvent;
 
 public class ControllerImp implements Controller {
 

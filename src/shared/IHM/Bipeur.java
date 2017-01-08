@@ -1,4 +1,4 @@
-package v1.IHM;
+package shared.IHM;
 
 public interface Bipeur {
 

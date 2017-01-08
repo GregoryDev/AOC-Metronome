@@ -1,4 +1,4 @@
-package v1.Command;
+package shared.Command;
 
 public class UpdateTime extends Command {
 

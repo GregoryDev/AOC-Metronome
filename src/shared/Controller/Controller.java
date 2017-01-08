@@ -1,4 +1,4 @@
-package v1.Controller;
+package shared.Controller;
 
 public interface Controller {
 

@@ -1,4 +1,4 @@
-package v1.IHM;
+package shared.IHM;
 
 
 import javafx.event.ActionEvent;
@@ -9,7 +9,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
-import v1.Command.Command;
+import shared.Command.Command;
 
 import java.net.URL;
 import java.util.HashMap;

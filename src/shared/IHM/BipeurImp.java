@@ -1,4 +1,4 @@
-package v1.IHM;
+package shared.IHM;
 
 import javafx.scene.media.AudioClip;
 
@@ -6,8 +6,8 @@ import java.net.URL;
 
 public class BipeurImp implements Bipeur{
 
-    private URL tempo = getClass().getResource("/v1/Audio/beep-07.wav");
-    private URL mesure = getClass().getResource("/v1/Audio/beep-08b.wav");
+    private URL tempo = getClass().getResource("/shared/Audio/beep-07.wav");
+    private URL mesure = getClass().getResource("/shared/Audio/beep-08b.wav");
 
     private AudioClip soundTempo = new AudioClip(tempo.toString());
     private AudioClip soundMesure = new AudioClip(mesure.toString());

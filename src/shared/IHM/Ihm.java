@@ -1,6 +1,6 @@
-package v1.IHM;
+package shared.IHM;
 
-import v1.Command.Command;
+import shared.Command.Command;
 
 public interface Ihm {
 
