@@ -1,4 +1,4 @@
-package shared.IHM;
+package v1.IHM;
 
 
 import javafx.event.ActionEvent;
@@ -10,6 +10,10 @@ import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import shared.Command.Command;
+import shared.IHM.Bipeur;
+import shared.IHM.BipeurImp;
+import shared.IHM.Ihm;
+import shared.IHM.IhmEvent;
 
 import java.net.URL;
 import java.util.HashMap;

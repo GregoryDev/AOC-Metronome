@@ -1,4 +1,4 @@
-package v2;
+package v2.IHM;
 
 import shared.Command.Command;
 import shared.IHM.Ihm;
