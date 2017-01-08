@@ -97,6 +97,12 @@ public class IhmImp implements Ihm, Initializable {
         mesure.setText("Mesures : " + time);
     }
 
+    @Override
+    public void tempo() {}
+
+    @Override
+    public void mesure() {}
+
     private void disabled(boolean on){
         start.setDisable(!on);
         stop.setDisable(on);
