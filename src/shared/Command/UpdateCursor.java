@@ -1,6 +1,6 @@
 package shared.Command;
 
-public class UpdateCursor extends Command {
+public class UpdateCursor extends CommandController {
 
     @Override
     public void execute() {

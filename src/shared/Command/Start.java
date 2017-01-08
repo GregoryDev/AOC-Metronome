@@ -1,6 +1,6 @@
 package shared.Command;
 
-public class Start extends Command {
+public class Start extends CommandController {
 
     @Override
     public void execute() {

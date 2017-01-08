@@ -1,6 +1,6 @@
 package shared.Command;
 
-public class Tempo extends Command {
+public class Tempo extends CommandController {
 
     @Override
     public void execute() {

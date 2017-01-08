@@ -1,6 +1,6 @@
 package shared.Command;
 
-public class DecTime extends Command{
+public class DecTime extends CommandController {
 
     @Override
     public void execute() {

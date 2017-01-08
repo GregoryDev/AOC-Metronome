@@ -32,7 +32,7 @@ public class ControllerImp implements Controller {
         updateTime();
     }
 
-    private Command initializeCommand(Command c) {
+    private Command initializeCommand(CommandController c) {
         c.setController(this);
         return c;
     }
