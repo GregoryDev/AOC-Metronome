@@ -11,19 +11,16 @@
         <ColumnConstraints />
         <ColumnConstraints />
         <ColumnConstraints />
-        <ColumnConstraints />
-        <ColumnConstraints />
     </columnConstraints>
     <rowConstraints>
         <RowConstraints />
         <RowConstraints />
-        <RowConstraints />
     </rowConstraints>
     <children>
-        <CheckBox fx:id="tempoLed" disable="true" mnemonicParsing="false" GridPane.columnIndex="4" />
-        <CheckBox fx:id="mesureLed" disable="true" mnemonicParsing="false" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-        <Text fx:id="tempo" GridPane.columnIndex="2" />
-        <Text fx:id="mesure" GridPane.columnIndex="3" />
-        <Text fx:id="started" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+        <CheckBox fx:id="tempoLed" disable="true" mnemonicParsing="false" GridPane.columnIndex="2" />
+        <CheckBox fx:id="mesureLed" disable="true" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+        <Text fx:id="tempo" GridPane.columnIndex="0" />
+        <Text fx:id="mesure" GridPane.columnIndex="1" />
+        <Text fx:id="started" GridPane.columnIndex="0" GridPane.rowIndex="1" />
     </children>
 </GridPane>
