@@ -1,12 +1,12 @@
 package v2.Command;
 
-import v2.IHM.IhmAdapterImpl;
+import v2.IHM.IhmAdapter;
 
 public abstract class CommandAdapter {
 
-    protected IhmAdapterImpl adapter;
+    protected IhmAdapter adapter;
 
-    public void setAdapter(IhmAdapterImpl adapter) {
+    public void setAdapter(IhmAdapter adapter) {
         this.adapter = adapter;
     }
 }
