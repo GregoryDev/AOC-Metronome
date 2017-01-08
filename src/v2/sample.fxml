@@ -24,5 +24,6 @@
         <CheckBox fx:id="mesureLed" disable="true" mnemonicParsing="false" GridPane.columnIndex="4" GridPane.rowIndex="1" />
         <Text fx:id="tempo" GridPane.columnIndex="2" />
         <Text fx:id="mesure" GridPane.columnIndex="3" />
+        <Text fx:id="started" GridPane.columnIndex="2" GridPane.rowIndex="1" />
     </children>
 </GridPane>
