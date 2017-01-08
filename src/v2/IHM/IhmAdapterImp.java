@@ -51,15 +51,15 @@ public class IhmAdapterImp implements Ihm, IhmAdapter, Initializable {
         bipeur = new BipeurImp(this);
         keyboard = new KeyboardImp();
 
-        keysCommands.put(KeyCode.PLUS, IhmEvent.INC);
-        keysCommands.put(KeyCode.MINUS, IhmEvent.DEC);
+        keysCommands.put(KeyCode.P, IhmEvent.INC);
+        keysCommands.put(KeyCode.M, IhmEvent.DEC);
         keysCommands.put(KeyCode.SPACE, IhmEvent.START);
         keysCommands.put(KeyCode.BACK_SPACE, IhmEvent.STOP);
         keysCommands.put(KeyCode.DOLLAR, IhmEvent.CURSOR);
         keysCommands.put(KeyCode.CIRCUMFLEX, IhmEvent.CURSOR);
 
-        keysStates.put(KeyCode.PLUS, false);
-        keysStates.put(KeyCode.MINUS, false);
+        keysStates.put(KeyCode.P, false);
+        keysStates.put(KeyCode.M, false);
         keysStates.put(KeyCode.SPACE, false);
         keysStates.put(KeyCode.BACK_SPACE, false);
         keysStates.put(KeyCode.DOLLAR, false);
