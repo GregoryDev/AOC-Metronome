@@ -5,11 +5,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import v1.Command.Command;
-import v1.Engine.EngineEvent;
 
 import java.net.URL;
 import java.util.HashMap;
@@ -18,6 +18,7 @@ import java.util.ResourceBundle;
 public class IhmImp implements Ihm, Initializable {
 
     private HashMap<IhmEvent, Command> commands = new HashMap<>();
+    private Bipeur bipeur;
 
     @FXML
     private Slider cursor;
@@ -39,6 +40,16 @@ public class IhmImp implements Ihm, Initializable {
 
     @FXML
     private Text mesure;
+
+    @FXML
+    private CheckBox tempoLed;
+
+    @FXML
+    private CheckBox mesureLed;
+
+    public IhmImp() {
+        bipeur = new BipeurImp();
+    }
 
     @Override
     public void setCommand(IhmEvent type, Command c) {
@@ -98,10 +109,18 @@ public class IhmImp implements Ihm, Initializable {
     }
 
     @Override
-    public void tempo() {}
+    public void tempo() {
+        tempoLed.setSelected(true);
+        bipeur.playTempo();
+        tempoLed.setSelected(false);
+    }
 
     @Override
-    public void mesure() {}
+    public void mesure() {
+        mesureLed.setSelected(true);
+        bipeur.playMesure();
+        mesureLed.setSelected(false);
+    }
 
     private void disabled(boolean on){
         start.setDisable(!on);

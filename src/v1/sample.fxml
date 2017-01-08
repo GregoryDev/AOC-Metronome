@@ -26,8 +26,8 @@
       <Button fx:id="stop" mnemonicParsing="false" onAction="#stop" prefHeight="75.0" prefWidth="75.0" text="Stop" GridPane.columnIndex="1" GridPane.rowIndex="2" />
       <Button fx:id="inc" mnemonicParsing="false" onAction="#inc" prefHeight="75.0" prefWidth="75.0" text="Inc" GridPane.columnIndex="2" GridPane.rowIndex="2" />
       <Button fx:id="dec" mnemonicParsing="false" onAction="#dec" prefHeight="75.0" prefWidth="75.0" text="Dec" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-      <CheckBox mnemonicParsing="false" text="Led 1" GridPane.columnIndex="4" />
-      <CheckBox mnemonicParsing="false" text="Led 2" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+      <CheckBox fx:id="tempoLed" mnemonicParsing="false" GridPane.columnIndex="4" />
+      <CheckBox fx:id="mesureLed" mnemonicParsing="false" GridPane.columnIndex="4" GridPane.rowIndex="1" />
       <Slider fx:id="cursor" onMouseReleased="#cursor" GridPane.columnSpan="2" />
       <Text fx:id="tempo" text="Tempo" GridPane.columnIndex="2" />
       <Text fx:id="mesure" text="Mesures" GridPane.columnIndex="3" />
