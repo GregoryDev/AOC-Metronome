@@ -116,8 +116,8 @@ public class IhmImp implements Ihm, Initializable {
 
     @Override
     public void switchLed(String type) {
-        if (type == "tempo") tempoLed.setSelected(tempoLed.isSelected());
-        else mesureLed.setSelected(mesureLed.isSelected());
+        if (type == "tempo") tempoLed.setSelected(!tempoLed.isSelected());
+        else mesureLed.setSelected(!mesureLed.isSelected());
     }
 
     private void disabled(boolean on){
