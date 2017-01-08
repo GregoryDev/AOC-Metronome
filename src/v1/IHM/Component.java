@@ -2,8 +2,15 @@ package v1.IHM;
 
 import v1.Command.Command;
 
-public interface Component {
+abstract class Component {
 
-        void setCommand(Command c);
-        void execute();
+        private Command c;
+
+        public void setCommand(Command c) {
+                this.c = c;
+        }
+
+        public void execute() {
+                c.execute();
+        }
 }

@@ -43,11 +43,11 @@ public class IhmImp implements Ihm, Initializable {
     private Text mesure;
 
     public IhmImp(){
-        cursorCom = Cursor.getInstance();
-        decCom = Dec.getInstance();
-        incCom = Inc.getInstance();
-        startCom = new Start();//Start.getInstance();
-        stopCom = Stop.getInstance();
+        cursorCom = new Cursor();
+        decCom = new Dec();
+        incCom = new Inc();
+        startCom = new Start();
+        stopCom = new Stop();
     }
 
     @Override
