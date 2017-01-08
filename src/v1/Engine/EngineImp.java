@@ -13,9 +13,9 @@ public class EngineImp implements Engine{
     private boolean started;
 
     public EngineImp(){
-        tempo = 0;
+        tempo = 60;
         started = false;
-        time = 0;
+        time = 2;
     }
 
     @Override
@@ -25,10 +25,8 @@ public class EngineImp implements Engine{
 
     @Override
     public void setTempo(float t) {
-        if (isStarted()) {
-            tempo = t;
-            commands.get(TypeEvent.UPDATE_TEMPO).execute();
-        }
+        tempo = t;
+        commands.get(TypeEvent.UPDATE_TEMPO).execute();
     }
 
     @Override
@@ -45,7 +43,7 @@ public class EngineImp implements Engine{
 
     @Override
     public void incTime() {
-        if(isStarted()) {
+        if(time < 7) {
             time++;
             commands.get(TypeEvent.UPDATE_TIME).execute();
         }
@@ -53,7 +51,7 @@ public class EngineImp implements Engine{
 
     @Override
     public void decTime() {
-        if(isStarted()) {
+        if(time > 2) {
             time--;
             commands.get(TypeEvent.UPDATE_TIME).execute();
         }
