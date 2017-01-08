@@ -47,10 +47,6 @@ public class IhmImp implements Ihm, Initializable {
     @FXML
     private CheckBox mesureLed;
 
-    public IhmImp() {
-        bipeur = new BipeurImp();
-    }
-
     @Override
     public void setCommand(IhmEvent type, Command c) {
         commands.put(type, c);
@@ -83,6 +79,7 @@ public class IhmImp implements Ihm, Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        bipeur = new BipeurImp();
         disabled(true);
     }
 

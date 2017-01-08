@@ -6,14 +6,14 @@ import java.net.URL;
 
 public class BipeurImp implements Bipeur{
 
-    final URL tempo = getClass().getResource("/Audio/beep-07.wav");
-    final URL mesure = getClass().getResource("/Audio/beep-08b.wav");
+    final private URL tempo = getClass().getResource("/v1/Audio/beep-07.wav");
+    final private URL mesure = getClass().getResource("/v1/Audio/beep-08b.wav");
 
-    final AudioClip soundTempo = new AudioClip(tempo.toString());
-    final AudioClip soundMesure = new AudioClip(mesure.toString());
+    final private AudioClip soundTempo = new AudioClip(tempo.toString());
+    final private AudioClip soundMesure = new AudioClip(mesure.toString());
 
     @Override
-    public void playTempo() {
+    public void playTempo() {System.out.println(this);
         soundTempo.play();
     }
 
