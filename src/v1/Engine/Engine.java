@@ -4,7 +4,7 @@ import v1.Command.Command;
 
 public interface Engine {
 
-    void setCommand(TypeEvent type, Command c);
+    void setCommand(EngineEvent type, Command c);
 
     void setTempo(float t);
     void start();

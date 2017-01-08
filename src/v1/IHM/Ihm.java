@@ -1,6 +1,7 @@
 package v1.IHM;
 
 import v1.Command.Command;
+import v1.Engine.EngineEvent;
 
 public interface Ihm {
 
@@ -9,10 +10,7 @@ public interface Ihm {
     void updateTime(int time);
     double getCursorPosition();
 
-    void setStartCommand(Command start);
-    void setStopCommand(Command stop);
-    void setIncCommand(Command inc);
-    void setDecCommand(Command dec);
-    void setCursorCommand(Command updateCursor);
+    void setCommand(IhmEvent type, Command c);
+
 }
 

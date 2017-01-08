@@ -9,17 +9,15 @@ import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import v1.Command.Command;
+import v1.Engine.EngineEvent;
 
 import java.net.URL;
+import java.util.HashMap;
 import java.util.ResourceBundle;
 
 public class IhmImp implements Ihm, Initializable {
 
-    private Cursor cursorCom;
-    private Dec decCom;
-    private Inc incCom;
-    private Start startCom;
-    private Stop stopCom;
+    private HashMap<IhmEvent, Component> components = new HashMap<>();
 
     @FXML
     private Slider cursor;
@@ -43,61 +41,41 @@ public class IhmImp implements Ihm, Initializable {
     private Text mesure;
 
     public IhmImp(){
-        cursorCom = new Cursor();
-        decCom = new Dec();
-        incCom = new Inc();
-        startCom = new Start();
-        stopCom = new Stop();
+        components.put(IhmEvent.CURSOR, new Cursor());
+        components.put(IhmEvent.DEC, new Cursor());
+        components.put(IhmEvent.INC, new Cursor());
+        components.put(IhmEvent.START, new Cursor());
+        components.put(IhmEvent.STOP, new Cursor());
     }
 
     @Override
-    public void setStartCommand(Command start){
-        startCom.setCommand(start);
-    }
-
-    @Override
-    public void setStopCommand(Command stop) {
-        stopCom.setCommand(stop);
-    }
-
-    @Override
-    public void setIncCommand(Command inc) {
-        incCom.setCommand(inc);
-    }
-
-    @Override
-    public void setDecCommand(Command dec) {
-        decCom.setCommand(dec);
-    }
-
-    @Override
-    public void setCursorCommand(Command updateCursor) {
-        cursorCom.setCommand(updateCursor);
+    public void setCommand(IhmEvent type, Command c) {
+        components.get(type).setCommand(c);
     }
 
     @FXML
     protected void start(ActionEvent event) {
-        startCom.execute();
+        components.get(IhmEvent.START).execute();
     }
 
     @FXML
     protected void stop(ActionEvent event) {
-        stopCom.execute();
+        components.get(IhmEvent.STOP).execute();
     }
 
     @FXML
     protected void inc(ActionEvent event) {
-        incCom.execute();
+        components.get(IhmEvent.INC).execute();
     }
 
     @FXML
     protected void dec(ActionEvent event) {
-        decCom.execute();
+        components.get(IhmEvent.DEC).execute();
     }
 
     @FXML
     protected void cursor(MouseEvent event) {
-        cursorCom.execute();
+        components.get(IhmEvent.CURSOR).execute();
     }
 
     @Override

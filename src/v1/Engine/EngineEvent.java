@@ -1,8 +1,9 @@
 package v1.Engine;
 
-public enum TypeEvent {
+public enum EngineEvent {
 
     UPDATE_TEMPO,
     UPDATE_STARTED,
-    UPDATE_TIME
+    UPDATE_TIME,
+
 }

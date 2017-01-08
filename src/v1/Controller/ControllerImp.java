@@ -2,8 +2,9 @@ package v1.Controller;
 
 import v1.Command.*;
 import v1.Engine.Engine;
-import v1.Engine.TypeEvent;
+import v1.Engine.EngineEvent;
 import v1.IHM.Ihm;
+import v1.IHM.IhmEvent;
 
 public class ControllerImp implements Controller {
 
@@ -14,37 +15,20 @@ public class ControllerImp implements Controller {
         this.engine = engine;
         this.ihm = ihm;
 
-        Command start = new Start();
-        start.setController(this);
-        this.ihm.setStartCommand(start);
+        this.ihm.setCommand(IhmEvent.START, initializeCommand(new Start()));
+        this.ihm.setCommand(IhmEvent.STOP, initializeCommand(new Stop()));
+        this.ihm.setCommand(IhmEvent.INC, initializeCommand(new IncTime()));
+        this.ihm.setCommand(IhmEvent.DEC, initializeCommand(new DecTime()));
+        this.ihm.setCommand(IhmEvent.CURSOR, initializeCommand(new UpdateCursor()));
 
-        Command stop = new Stop();
-        stop.setController(this);
-        this.ihm.setStopCommand(stop);
+        this.engine.setCommand(EngineEvent.UPDATE_STARTED, initializeCommand(new UpdateStarted()));
+        this.engine.setCommand(EngineEvent.UPDATE_TEMPO, initializeCommand(new UpdateTempo()));
+        this.engine.setCommand(EngineEvent.UPDATE_TIME, initializeCommand(new UpdateTime()));
+    }
 
-        Command inc = new IncTime();
-        inc.setController(this);
-        this.ihm.setIncCommand(inc);
-
-        Command dec = new DecTime();
-        dec.setController(this);
-        this.ihm.setDecCommand(dec);
-
-        Command cursor = new UpdateCursor();
-        cursor.setController(this);
-        this.ihm.setCursorCommand(cursor);
-
-        Command updateStarted = new UpdateStarted();
-        updateStarted.setController(this);
-        this.engine.setCommand(TypeEvent.UPDATE_STARTED, updateStarted);
-
-        Command updateTime = new UpdateTime();
-        updateTime.setController(this);
-        this.engine.setCommand(TypeEvent.UPDATE_TIME, updateTime);
-
-        Command updateTempo = new UpdateTempo();
-        updateTempo.setController(this);
-        this.engine.setCommand(TypeEvent.UPDATE_TEMPO, updateTempo);
+    private Command initializeCommand(Command c) {
+        c.setController(this);
+        return c;
     }
 
     @Override
