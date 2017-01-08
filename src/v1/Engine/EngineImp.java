@@ -11,11 +11,15 @@ public class EngineImp implements Engine{
     private float tempo;
     private int time;
     private boolean started;
+    private int currentTime = 0;
+    private Horloge horloge;
 
     public EngineImp(){
         tempo = 60;
         started = false;
         time = 2;
+        currentTime = 0;
+        horloge = new HorlogeImp();
     }
 
     @Override
