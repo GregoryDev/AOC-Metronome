@@ -1,7 +1,6 @@
 package shared.Controller;
 
 import shared.Command.*;
-import v1.Command.*;
 import shared.Engine.Engine;
 import shared.Engine.EngineEvent;
 import shared.IHM.Ihm;
