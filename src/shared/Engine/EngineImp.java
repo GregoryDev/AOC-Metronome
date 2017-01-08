@@ -10,7 +10,7 @@ public class EngineImp implements Engine{
 
     private int tempo;
     private int time;
-    private int currentTime = 0;
+    private int currentTime;
     private boolean started;
     private Horloge horloge;
 
@@ -36,6 +36,7 @@ public class EngineImp implements Engine{
     public void start() {
         if (!started) {
             started = true;
+            currentTime = 0;
             horloge = new HorlogeImp(this);
             new Thread(horloge).start();
             commands.get(EngineEvent.UPDATE_STARTED).execute();
@@ -44,7 +45,6 @@ public class EngineImp implements Engine{
 
     @Override
     public void stop() {
-        currentTime = 0;
         started = false;
         horloge.stopRunning();
         commands.get(EngineEvent.UPDATE_STARTED).execute();
