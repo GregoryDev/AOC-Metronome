@@ -17,7 +17,7 @@ import java.util.ResourceBundle;
 
 public class IhmImp implements Ihm, Initializable {
 
-    private HashMap<IhmEvent, Component> components = new HashMap<>();
+    private HashMap<IhmEvent, Command> commands = new HashMap<>();
 
     @FXML
     private Slider cursor;
@@ -40,42 +40,34 @@ public class IhmImp implements Ihm, Initializable {
     @FXML
     private Text mesure;
 
-    public IhmImp(){
-        components.put(IhmEvent.CURSOR, new Cursor());
-        components.put(IhmEvent.DEC, new Cursor());
-        components.put(IhmEvent.INC, new Cursor());
-        components.put(IhmEvent.START, new Cursor());
-        components.put(IhmEvent.STOP, new Cursor());
-    }
-
     @Override
     public void setCommand(IhmEvent type, Command c) {
-        components.get(type).setCommand(c);
+        commands.put(type, c);
     }
 
     @FXML
     protected void start(ActionEvent event) {
-        components.get(IhmEvent.START).execute();
+        commands.get(IhmEvent.START).execute();
     }
 
     @FXML
     protected void stop(ActionEvent event) {
-        components.get(IhmEvent.STOP).execute();
+        commands.get(IhmEvent.STOP).execute();
     }
 
     @FXML
     protected void inc(ActionEvent event) {
-        components.get(IhmEvent.INC).execute();
+        commands.get(IhmEvent.INC).execute();
     }
 
     @FXML
     protected void dec(ActionEvent event) {
-        components.get(IhmEvent.DEC).execute();
+        commands.get(IhmEvent.DEC).execute();
     }
 
     @FXML
     protected void cursor(MouseEvent event) {
-        components.get(IhmEvent.CURSOR).execute();
+        commands.get(IhmEvent.CURSOR).execute();
     }
 
     @Override
