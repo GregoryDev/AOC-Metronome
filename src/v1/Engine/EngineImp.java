@@ -63,7 +63,7 @@ public class EngineImp implements Engine{
     @Override
     public void incCurrentTime() {
         currentTime++;
-        if (currentTime == time) {
+        if (currentTime >= time) {
             currentTime = 0;
             commands.get(EngineEvent.MESURE).execute();
         }
