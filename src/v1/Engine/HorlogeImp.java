@@ -1,36 +1,23 @@
 package v1.Engine;
 
-public class HorlogeImp extends Thread implements Horloge {
+public class HorlogeImp implements Horloge {
 
     private Engine engine;
-    private boolean started;
     private boolean running;
 
-    public HorlogeImp() {
-        started = false;
-    }
-
-    public void setEngine(Engine engine) {
+    public HorlogeImp(Engine engine) {
         this.engine = engine;
+        running = true;
     }
 
-    public void startHorloge() {
-        started = true;
-        start();
-    }
-
-    public void stopHorloge() {
-        started = false;
-    }
-
-    public boolean isStarted() {
-        return started;
+    public void stopRunning() {
+        running = false;
     }
 
     public void run() {
-        while (started) {
+        while (running) {
             try {
-                sleep((long)((double)60 / (double)engine.getTempo() * (double)1000));
+                Thread.sleep((long)((double)60 / (double)engine.getTempo() * (double)1000));
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

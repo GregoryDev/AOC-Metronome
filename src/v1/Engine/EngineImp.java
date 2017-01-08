@@ -11,14 +11,14 @@ public class EngineImp implements Engine{
     private int tempo;
     private int time;
     private int currentTime = 0;
+    private boolean started;
     private Horloge horloge;
 
     public EngineImp(){
-        horloge = new HorlogeImp();
-        horloge.setEngine(this);
         tempo = 60;
         time = 2;
         currentTime = 0;
+        started = false;
     }
 
     @Override
@@ -34,13 +34,16 @@ public class EngineImp implements Engine{
 
     @Override
     public void start() {
-        horloge.startHorloge();
+        started = true;
+        horloge = new HorlogeImp(this);
+        new Thread(horloge).start();
         commands.get(EngineEvent.UPDATE_STARTED).execute();
     }
 
     @Override
     public void stop() {
-        horloge.stopHorloge();
+        started = false;
+        horloge.stopRunning();
         commands.get(EngineEvent.UPDATE_STARTED).execute();
     }
 
@@ -77,7 +80,7 @@ public class EngineImp implements Engine{
 
     @Override
     public boolean isStarted() {
-        return horloge.isStarted();
+        return started;
     }
 
     @Override

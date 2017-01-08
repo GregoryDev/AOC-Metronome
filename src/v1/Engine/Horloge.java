@@ -1,9 +1,7 @@
 package v1.Engine;
 
-public interface Horloge {
+public interface Horloge extends Runnable {
 
-    void setEngine(Engine engine);
-    void startHorloge();
-    void stopHorloge();
-    boolean isStarted();
+    void stopRunning();
+
 }
