@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+
+<GridPane alignment="center" hgap="15.0" vgap="15.0" xmlns="http://javafx.com/javafx/8.0.112-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shared.IHM.IhmImp">
+    <columnConstraints>
+        <ColumnConstraints />
+        <ColumnConstraints />
+        <ColumnConstraints />
+        <ColumnConstraints />
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+    </rowConstraints>
+    <children>
+        <CheckBox fx:id="tempoLed" disable="true" mnemonicParsing="false" GridPane.columnIndex="4" />
+        <CheckBox fx:id="mesureLed" disable="true" mnemonicParsing="false" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+        <Text fx:id="tempo" GridPane.columnIndex="2" />
+        <Text fx:id="mesure" GridPane.columnIndex="3" />
+    </children>
+</GridPane>
