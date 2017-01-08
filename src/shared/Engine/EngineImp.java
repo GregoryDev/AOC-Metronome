@@ -34,14 +34,17 @@ public class EngineImp implements Engine{
 
     @Override
     public void start() {
-        started = true;
-        horloge = new HorlogeImp(this);
-        new Thread(horloge).start();
-        commands.get(EngineEvent.UPDATE_STARTED).execute();
+        if (!started) {
+            started = true;
+            horloge = new HorlogeImp(this);
+            new Thread(horloge).start();
+            commands.get(EngineEvent.UPDATE_STARTED).execute();
+        }
     }
 
     @Override
     public void stop() {
+        currentTime = 0;
         started = false;
         horloge.stopRunning();
         commands.get(EngineEvent.UPDATE_STARTED).execute();
