@@ -24,6 +24,8 @@ public class ControllerImp implements Controller {
         this.engine.setCommand(EngineEvent.UPDATE_STARTED, initializeCommand(new UpdateStarted()));
         this.engine.setCommand(EngineEvent.UPDATE_TEMPO, initializeCommand(new UpdateTempo()));
         this.engine.setCommand(EngineEvent.UPDATE_TIME, initializeCommand(new UpdateTime()));
+        this.engine.setCommand(EngineEvent.TEMPO, initializeCommand(new Tempo()));
+        this.engine.setCommand(EngineEvent.MESURE, initializeCommand(new Mesure()));
     }
 
     private Command initializeCommand(Command c) {
@@ -44,6 +46,16 @@ public class ControllerImp implements Controller {
     @Override
     public void updateTime(){
         ihm.updateTime(engine.getTime());
+    }
+
+    @Override
+    public void tempo(){
+        ihm.tempo();
+    }
+
+    @Override
+    public void mesure(){
+        ihm.mesure();
     }
 
     @Override

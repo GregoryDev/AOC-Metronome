@@ -9,6 +9,8 @@ public interface Ihm {
     void updateStarted(boolean started);
     void updateTime(int time);
     double getCursorPosition();
+    void tempo();
+    void mesure();
 
     void setCommand(IhmEvent type, Command c);
 

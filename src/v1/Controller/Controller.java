@@ -5,6 +5,8 @@ public interface Controller {
     void updateTempo();
     void updateStarted();
     void updateTime();
+    void tempo();
+    void mesure();
 
     void setTempo();
     void start();
