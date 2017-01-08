@@ -16,7 +16,7 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.ResourceBundle;
 
-public class IhmAdapterImpl implements Ihm, IhmAdapter, Initializable {
+public class IhmAdapterImp implements Ihm, IhmAdapter, Initializable {
 
     private HashMap<IhmEvent, Command> commands = new HashMap<>();
     private HashMap<KeyCode, IhmEvent> keysCommands = new HashMap<>();
@@ -113,16 +113,12 @@ public class IhmAdapterImpl implements Ihm, IhmAdapter, Initializable {
         keyboard.removeKey(e.getCode());
     }
 
-    public void lire() {
+    @Override
+    public void read() {
         for (KeyCode key : keysStates.keySet()) {
             if (keysStates.get(key) && !keyboard.containsKey(key))
                 commands.get(keysCommands.get(key)).execute();
             keysStates.put(key, keyboard.containsKey(key));
         }
-    }
-
-    @Override
-    public void read() {
-
     }
 }
