@@ -79,7 +79,7 @@ public class IhmImp implements Ihm, Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        bipeur = new BipeurImp();
+        bipeur = new BipeurImp(this);
         disabled(true);
     }
 
@@ -106,16 +106,18 @@ public class IhmImp implements Ihm, Initializable {
 
     @Override
     public void tempo() {
-        tempoLed.setSelected(true);
         bipeur.playTempo();
-        tempoLed.setSelected(false);
     }
 
     @Override
     public void mesure() {
-        mesureLed.setSelected(true);
         bipeur.playMesure();
-        mesureLed.setSelected(false);
+    }
+
+    @Override
+    public void switchLed(String type) {
+        if (type == "tempo") tempoLed.setSelected(tempoLed.isSelected());
+        else mesureLed.setSelected(mesureLed.isSelected());
     }
 
     private void disabled(boolean on){

@@ -11,6 +11,7 @@ public interface Ihm {
     double getCursorPosition();
     void tempo();
     void mesure();
+    void switchLed(String type);
 
     void setCommand(IhmEvent type, Command c);
 
