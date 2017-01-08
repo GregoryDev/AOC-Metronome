@@ -16,7 +16,9 @@ public class Main extends Application {
         FXMLLoader fxml = new FXMLLoader(getClass().getResource("sample.fxml"));
         Parent root = fxml.load();
         primaryStage.setTitle("Metronome-v2");
-        primaryStage.setScene(new Scene(root, 600, 300));
+        Scene scene = new Scene(root, 600, 300);
+        scene.getRoot().requestFocus();
+        primaryStage.setScene(scene);
         primaryStage.show();
 
         init(fxml);
@@ -25,7 +27,6 @@ public class Main extends Application {
             Platform.exit();
             System.exit(0);
         });
-
     }
 
     public void init(FXMLLoader fxml) {
