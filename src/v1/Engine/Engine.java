@@ -6,13 +6,15 @@ public interface Engine {
 
     void setCommand(EngineEvent type, Command c);
 
-    void setTempo(float t);
+    void setTempo(int t);
     void start();
     void stop();
     void incTime();
     void decTime();
 
-    float getTempo();
-    boolean isStarted();
+    int getTempo();
     int getTime();
+    boolean isStarted();
+
+    void incCurrentTime();
 }

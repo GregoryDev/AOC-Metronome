@@ -8,18 +8,17 @@ public class EngineImp implements Engine{
 
     private HashMap<EngineEvent, Command> commands = new HashMap<>();
 
-    private float tempo;
+    private int tempo;
     private int time;
-    private boolean started;
     private int currentTime = 0;
     private Horloge horloge;
 
     public EngineImp(){
+        horloge = new HorlogeImp();
+        horloge.setEngine(this);
         tempo = 60;
-        started = false;
         time = 2;
         currentTime = 0;
-        horloge = new HorlogeImp();
     }
 
     @Override
@@ -28,20 +27,20 @@ public class EngineImp implements Engine{
     }
 
     @Override
-    public void setTempo(float t) {
+    public void setTempo(int t) {
         tempo = t;
         commands.get(EngineEvent.UPDATE_TEMPO).execute();
     }
 
     @Override
     public void start() {
-        started = true;
+        horloge.startHorloge();
         commands.get(EngineEvent.UPDATE_STARTED).execute();
     }
 
     @Override
     public void stop() {
-        started = false;
+        horloge.stopHorloge();
         commands.get(EngineEvent.UPDATE_STARTED).execute();
     }
 
@@ -62,13 +61,23 @@ public class EngineImp implements Engine{
     }
 
     @Override
-    public float getTempo() {
+    public void incCurrentTime() {
+        currentTime++;
+        if (currentTime == time) {
+            currentTime = 0;
+            commands.get(EngineEvent.MESURE).execute();
+        }
+        else commands.get(EngineEvent.TEMPO).execute();
+    }
+
+    @Override
+    public int getTempo() {
         return tempo;
     }
 
     @Override
     public boolean isStarted() {
-        return started;
+        return horloge.isStarted();
     }
 
     @Override
