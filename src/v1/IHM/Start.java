@@ -4,14 +4,14 @@ import v1.Command.Command;
 
 public class Start implements Component {
 
-    private static Start instance = new Start();
+    //private static Start instance = new Start();
     private Command c;
 
-    private Start(){}
+    //private Start(){}
 
-    public static Start getInstance() {
+    /*public static Start getInstance() {
         return instance;
-    }
+    }*/
 
     @Override
     public void setCommand(Command c) {

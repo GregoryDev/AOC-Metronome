@@ -46,7 +46,7 @@ public class IhmImp implements Ihm, Initializable {
         cursorCom = Cursor.getInstance();
         decCom = Dec.getInstance();
         incCom = Inc.getInstance();
-        startCom = Start.getInstance();
+        startCom = new Start();//Start.getInstance();
         stopCom = Stop.getInstance();
     }
 
