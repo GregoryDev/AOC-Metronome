@@ -14,10 +14,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        //Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         FXMLLoader fxml = new FXMLLoader(getClass().getResource("sample.fxml"));
         Parent root = fxml.load();
-        primaryStage.setTitle("Metronome");
+        primaryStage.setTitle("Metronome-v1");
         primaryStage.setScene(new Scene(root, 600, 300));
         primaryStage.show();
 
@@ -30,7 +29,7 @@ public class Main extends Application {
     }
 
     public void init(FXMLLoader fxml) {
-        Controller controller = new ControllerImp(new EngineImp(), fxml.getController());
+        new ControllerImp(new EngineImp(), fxml.getController());
     }
 
 

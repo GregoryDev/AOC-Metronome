@@ -1,7 +1,6 @@
 package v1.IHM;
 
 import v1.Command.Command;
-import v1.Engine.EngineEvent;
 
 public interface Ihm {
 

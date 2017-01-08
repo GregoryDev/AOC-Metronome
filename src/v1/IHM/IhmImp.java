@@ -24,12 +24,6 @@ public class IhmImp implements Ihm, Initializable {
     private Slider cursor;
 
     @FXML
-    private Button dec;
-
-    @FXML
-    private Button inc;
-
-    @FXML
     private Button start;
 
     @FXML
