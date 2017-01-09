@@ -14,6 +14,10 @@ public class EngineImp implements Engine{
     private boolean started;
     private Horloge horloge;
 
+
+    /**
+     * Cosntructeur avec initialisation des valeurs
+     */
     public EngineImp(){
         tempo = 60;
         time = 2;
