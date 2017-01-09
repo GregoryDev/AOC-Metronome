@@ -14,6 +14,10 @@ public class BipeurImp implements Bipeur{
 
     private Ihm ihm;
 
+    /**
+     * Constructeur du bipeur
+     * @param ihm l'ihm interagissant avec ce bipeur
+     */
     public BipeurImp(Ihm ihm) {
         this.ihm = ihm;
     }
@@ -34,10 +38,17 @@ public class BipeurImp implements Bipeur{
 
         private String type;
 
+        /**
+         * Creation d'un thread permettant d'allumer la bonne led le temps du son correspondant
+         * @param type le type de led a allumer
+         */
         private Highlight(String type) {
             this.type = type;
         }
 
+        /**
+         * Execution du thread
+         */
         public void run() {
             ihm.switchLed(type);
             while (soundTempo.isPlaying() || soundMesure.isPlaying()) {}

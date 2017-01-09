@@ -118,6 +118,10 @@ public class IhmImp implements Ihm, Initializable {
         else mesureLed.setSelected(!mesureLed.isSelected());
     }
 
+    /**
+     * Active/desactive les boutons start et stop
+     * @param on sens d'activation/desactivation
+     */
     private void disabled(boolean on){
         start.setDisable(!on);
         stop.setDisable(on);
