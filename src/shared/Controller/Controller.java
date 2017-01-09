@@ -3,17 +3,17 @@ package shared.Controller;
 public interface Controller {
 
     /**
-     * Mets a jour le tempo sur l'ihm
+     * Met a jour le tempo sur l'ihm
      */
     void updateTempo();
 
     /**
-     * Mets a jour le statut (started or not) sur l'ihm
+     * Met a jour le statut (started or not) sur l'ihm
      */
     void updateStarted();
 
     /**
-     * Mets a jour le nombre de temps sur l'ihm
+     * Met a jour le nombre de temps sur l'ihm
      */
     void updateTime();
 
