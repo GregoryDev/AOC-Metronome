@@ -9,7 +9,6 @@ public class KeyboardImp implements Keyboard {
 
     private List<KeyCode> keys = new ArrayList<KeyCode>();
 
-
     @Override
     public void addKey(KeyCode e) {
         if (!keys.contains(e)) keys.add(e);

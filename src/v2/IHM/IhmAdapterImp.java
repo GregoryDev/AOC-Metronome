@@ -124,6 +124,10 @@ public class IhmAdapterImp implements Ihm, IhmAdapter, Initializable {
         }
     }
 
+    /**
+     * Met jour la valeur de tempo de notre ihm
+     * @param key determine si on augmente ou dimininue le tempo
+     */
     private void updateCursor(KeyCode key) {
         if (key == KeyCode.O) cursorValue = Math.min(300, cursorValue + 10);
         if (key == KeyCode.L) cursorValue = Math.max(10, cursorValue - 10);
