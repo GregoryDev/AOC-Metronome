@@ -16,6 +16,11 @@ import v2.Command.Read;
 
 public class Main extends Application {
 
+    /**
+     * Initialisation JavaFX
+     * @param primaryStage l'objet Stage de JavaFX
+     * @throws Exception
+     */
     @Override
     public void start(Stage primaryStage) throws Exception{
         FXMLLoader fxml = new FXMLLoader(getClass().getResource("sample.fxml"));
@@ -34,6 +39,10 @@ public class Main extends Application {
         });
     }
 
+    /**
+     * Instantiation et initialisation du controller, de l'engine et de l'ihm
+     * @param fxml le loader de JavaFX
+     */
     public void init(FXMLLoader fxml) {
         new ControllerImp(new EngineImp(), fxml.getController());
         Clock clock = new ClockImp();
@@ -43,6 +52,10 @@ public class Main extends Application {
         (new Thread(clock)).start();
     }
 
+    /**
+     * Le Main de la version 2 du metronome
+     * @param args
+     */
     public static void main(String[] args) {
         launch(args);
     }
