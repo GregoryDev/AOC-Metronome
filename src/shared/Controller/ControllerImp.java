@@ -11,6 +11,11 @@ public class ControllerImp implements Controller {
     private Engine engine;
     private Ihm ihm;
 
+    /**
+     * Constructeur du controller
+     * @param engine le moteur du metronome
+     * @param ihm l'interface de l'ihm
+     */
     public ControllerImp(Engine engine, Ihm ihm){
         this.engine = engine;
         this.ihm = ihm;
@@ -32,6 +37,11 @@ public class ControllerImp implements Controller {
         updateTime();
     }
 
+    /**
+     * Initialize une commande ayant ce controller pour cible
+     * @param c la commande a initialiser
+     * @return la commande sous forme d'interface
+     */
     private Command initializeCommand(CommandController c) {
         c.setController(this);
         return c;

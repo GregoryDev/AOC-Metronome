@@ -88,7 +88,7 @@ public class IhmImp implements Ihm, Initializable {
 
     @Override
     public void updateTempo(double tempo) {
-        this.tempo.setText("Tempo : " + (int)tempo);
+        this.tempo.setText("Tempo : " + (int)tempo + " bpm");
         cursor.setValue(tempo);
     }
 
@@ -99,7 +99,7 @@ public class IhmImp implements Ihm, Initializable {
 
     @Override
     public void updateTime(int time) {
-        mesure.setText("Mesures : " + time);
+        mesure.setText("Mesure : " + time + " temps");
     }
 
     @Override

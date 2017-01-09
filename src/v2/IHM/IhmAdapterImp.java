@@ -73,7 +73,7 @@ public class IhmAdapterImp implements Ihm, IhmAdapter, Initializable {
 
     @Override
     public void updateTempo(double tempo) {
-        this.tempo.setText("Tempo : " + (int)tempo);
+        this.tempo.setText("Tempo : " + (int)tempo + " bpm");
         cursorValue = tempo;
     }
 
@@ -84,7 +84,7 @@ public class IhmAdapterImp implements Ihm, IhmAdapter, Initializable {
 
     @Override
     public void updateTime(int time) {
-        mesure.setText("Mesures : " + time);
+        mesure.setText("Mesure : " + time + " temps");
     }
 
     @Override
