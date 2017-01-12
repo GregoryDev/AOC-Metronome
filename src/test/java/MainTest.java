@@ -4,11 +4,11 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
-import shared.Controller.Controller;
-import shared.Controller.ControllerImp;
+import v1.Controller.Controller;
+import v1.Controller.ControllerImp;
 import shared.Engine.Engine;
 import shared.Engine.EngineImp;
-import shared.IHM.Ihm;
+import v1.IHM.Ihm;
 import v1.IHM.IhmImp;
 
 public class MainTest {

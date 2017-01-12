@@ -1,6 +1,7 @@
 package shared.IHM;
 
 import javafx.scene.media.AudioClip;
+import v1.IHM.Ihm;
 
 import java.net.URL;
 

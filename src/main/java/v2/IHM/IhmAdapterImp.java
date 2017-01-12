@@ -9,14 +9,13 @@ import javafx.scene.text.Text;
 import shared.Command.Command;
 import shared.IHM.Bipeur;
 import shared.IHM.BipeurImp;
-import shared.IHM.Ihm;
-import shared.IHM.IhmEvent;
+import v1.IHM.IhmEvent;
 
 import java.net.URL;
 import java.util.HashMap;
 import java.util.ResourceBundle;
 
-public class IhmAdapterImp implements Ihm, IhmAdapter, Initializable {
+public class IhmAdapterImp implements IhmAdapter, Initializable {
 
     private HashMap<IhmEvent, Command> commands = new HashMap<>();
     private HashMap<KeyCode, IhmEvent> keysCommands = new HashMap<>();

@@ -7,12 +7,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import shared.Command.Command;
-import shared.Controller.ControllerImp;
 import shared.Engine.EngineImp;
 import v2.Clock.Clock;
 import v2.Clock.ClockImp;
-import v2.Command.CommandAdapter;
+import v2.Command.CommandControllerAdapter;
 import v2.Command.Read;
+import v2.Controller.ControllerAdapter;
+import v2.Controller.ControllerAdapterImp;
 
 public class Main extends Application {
 
@@ -44,10 +45,10 @@ public class Main extends Application {
      * @param fxml le loader de JavaFX
      */
     public void init(FXMLLoader fxml) {
-        new ControllerImp(new EngineImp(), fxml.getController());
+        ControllerAdapter controller = new ControllerAdapterImp(new EngineImp(), fxml.getController());
         Clock clock = new ClockImp();
         Command read = new Read();
-        ((CommandAdapter)read).setAdapter(fxml.getController());
+        ((CommandControllerAdapter)read).setController(controller);
         clock.setCommand(read);
         (new Thread(clock)).start();
     }

@@ -1,6 +1,6 @@
 package shared.Command;
 
-import shared.Controller.Controller;
+import v1.Controller.Controller;
 
 public abstract class CommandController implements Command {
 

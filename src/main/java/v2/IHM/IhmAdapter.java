@@ -1,6 +1,8 @@
 package v2.IHM;
 
-public interface IhmAdapter {
+import v1.IHM.Ihm;
+
+public interface IhmAdapter extends Ihm {
 
     /**
      * Lance une lecture du clavier passif et

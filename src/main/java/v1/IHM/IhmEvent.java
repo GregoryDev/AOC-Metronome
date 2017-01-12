@@ -1,4 +1,4 @@
-package shared.IHM;
+package v1.IHM;
 
 public enum IhmEvent {
 

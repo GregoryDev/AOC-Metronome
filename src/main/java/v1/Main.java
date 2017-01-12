@@ -6,7 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import shared.Controller.ControllerImp;
+import v1.Controller.ControllerImp;
 import shared.Engine.EngineImp;
 
 public class Main extends Application {
