@@ -14,7 +14,6 @@ public class EngineImp implements Engine{
     private boolean started;
     private Horloge horloge;
 
-
     /**
      * Cosntructeur avec initialisation des valeurs
      */
@@ -32,7 +31,9 @@ public class EngineImp implements Engine{
 
     @Override
     public void setTempo(int t) {
-        tempo = t;
+        if (t < 10) tempo = 10;
+        else if (t > 300) tempo = 300;
+        else tempo = t;
         commands.get(EngineEvent.UPDATE_TEMPO).execute();
     }
 
